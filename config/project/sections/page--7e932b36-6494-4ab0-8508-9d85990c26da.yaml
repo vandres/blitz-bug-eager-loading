@@ -1,0 +1,15 @@
+defaultPlacement: end
+enableVersioning: true
+handle: page
+name: Page
+propagationMethod: all
+siteSettings:
+  f77f2823-75d2-4434-bf3e-9b5cb6a46fc9: # Blitz Bug Eager Loading
+    enabledByDefault: true
+    hasUrls: true
+    template: page/_entry
+    uriFormat: 'page/{slug}'
+structure:
+  maxLevels: null
+  uid: 273007a8-49ab-42c2-8c46-4e9f8dda31e0
+type: structure

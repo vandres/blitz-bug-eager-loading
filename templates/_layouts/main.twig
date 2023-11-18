@@ -1,0 +1,42 @@
+{% set output %}
+    <!DOCTYPE html>
+    <html lang="en" class="{{ entry.type }}{{ devMode ? ' development' : '' }}">
+    <head>
+        {% block head %}
+        {% endblock %}
+
+        {% block styles %}
+        {% endblock %}
+
+        {% block headJs %}
+            {{ head() }}
+        {% endblock %}
+    </head>
+
+    <body>
+    {% block bodyJs %}
+        {{ beginBody() }}
+    {% endblock %}
+
+    {% block header %}
+        {% include '_includes/header.twig' %}
+    {% endblock %}
+
+    {% block content %}
+        {% block body %}{% endblock %}
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
+
+    {% block mobileNav %}
+    {% endblock %}
+
+    {{ endBody() }}
+
+    {% block footerJs %}
+    {% endblock %}
+    </body>
+    </html>
+{% endset %}
+{{- output -}}

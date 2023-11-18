@@ -1,0 +1,19 @@
+{% do craft.app.elements.eagerLoadElements(
+    className(header),
+    [header],
+    ['navigation']
+) %}
+
+{% set slugs = slugs ?? craft.app.request.segments %}
+
+<header>
+  <nav>
+    {% if header.navigation.all() | length %}
+      <ul>
+        {% for link in header.navigation.all() %}
+          <li class="{% if link.slug in slugs %}active{% endif %}"><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </nav>
+</header>
